@@ -7,6 +7,7 @@
     "dev": "vite",
     "dev:api": "node backend/server.js",
     "dev:full": "concurrently -k -n client,api -c blue,green \"vite\" \"node backend/server.js\"",
+    "start": "node scripts/ensure-env.mjs && npm run dev:full",
     "mysql:start": "bash scripts/start-mysql.sh",
     "mysql:stop": "bash scripts/stop-mysql.sh",
     "setup:local": "npm run mysql:start && npm run db:seed",

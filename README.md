@@ -1,48 +1,48 @@
 # Life-Long Logistics — Hospital Inventory
 
-React (Vite) frontend plus a **Node HTTP API** in `backend/server.js`. Inventory can be backed by **MySQL** using the normalized schema and seeds in **`Updated-Final-DB/`** (included in this repo), or run **in-memory** for quick demos without a database.
+React (Vite) frontend plus a **Node HTTP API** in `backend/server.js`. Use **in-memory** storage for instant setup, or **MySQL** with the normalized schema in **`Updated-Final-DB/`** (included in this repo).
 
-## Prerequisites
+## Quick start (teammates)
 
-- Node.js (LTS) and npm  
-- MySQL 8.x (only if `USE_MYSQL=true` in `.env`)
-
-## Setup
-
-### 1) Environment
+You only need **Node.js (LTS)** and **npm**. No database install required.
 
 ```bash
-cp .env.example .env
+git clone https://github.com/FrankieAguirre/life-long-logistics-inventory.git
+cd life-long-logistics-inventory
+npm install
+npm start
 ```
 
-Important variables:
+The first `npm start` creates a `.env` from `.env.example` if you do not already have one. Then it runs the UI and API together.
+
+- **App:** http://localhost:5173/  
+- **Demo login:** `frankie` / `demo1234`  
+
+That is one clone and **two commands** after that (`npm install`, `npm start`).
+
+## Optional: full MySQL dataset
+
+1. Install MySQL 8.x and start it (or `npm run mysql:start` if you use the bundled helper scripts).
+2. In `.env`, set `USE_MYSQL=true` and adjust `DB_*` if needed.
+3. Run once: `npm run db:seed` (applies **`Updated-Final-DB/`** schema + seeds + demo user).
+4. `npm start` (or `npm run dev:full`).
+
+## Environment reference
 
 | Variable | Purpose |
 |----------|---------|
 | `VITE_USE_LIVE_API` | `true` (default): browser calls `/api` through the Vite proxy. `false`: mock auth + `src/data/medicines.js`. |
-| `USE_MYSQL` | `true`: real DB via `mysql2`. `false`: in-memory API storage. |
+| `USE_MYSQL` | `true`: real DB via `mysql2`. `false`: in-memory API storage (default in `.env.example`). |
 | `PORT` | API port (default **4000**). |
 | `DB_*` | MySQL connection when `USE_MYSQL=true`. |
 
-### 2) Install
+### Manual `.env`
+
+If you prefer not to use `npm start`, copy env and run dev:
 
 ```bash
+cp .env.example .env
 npm install
-```
-
-### 3) Database (MySQL mode only)
-
-With `USE_MYSQL=true`, create schema and load **Updated-Final-DB** seeds (locations, medications, lots, balances) plus demo user **`frankie` / `demo1234`**:
-
-```bash
-npm run db:seed
-```
-
-Schema and seed SQL live in **`Updated-Final-DB/`** at the repository root (no extra checkout).
-
-### 4) Run UI + API
-
-```bash
 npm run dev:full
 ```
 
@@ -57,9 +57,10 @@ curl http://127.0.0.1:4000/api/health
 
 | Script | Description |
 |--------|-------------|
+| `npm start` | Ensures `.env` exists, then Vite + API (recommended). |
 | `npm run dev` | Vite only. |
 | `npm run dev:api` | API only (`node backend/server.js`). |
-| `npm run dev:full` | Vite + API. |
+| `npm run dev:full` | Vite + API (expects `.env` already). |
 | `npm run db:seed` | Apply normalized schema + seed (MySQL). |
 | `npm run mysql:start` / `mysql:stop` | Local MySQL helper scripts (if configured). |
 | `npm run build` | Production build of the React app. |
