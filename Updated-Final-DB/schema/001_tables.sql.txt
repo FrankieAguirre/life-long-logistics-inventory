@@ -1,0 +1,82 @@
+CREATE TABLE locations (
+  location_id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  name        VARCHAR(255) NOT NULL,
+  PRIMARY KEY (location_id),
+  UNIQUE KEY uq_locations_name (name)
+) ENGINE=InnoDB;
+
+CREATE TABLE medications (
+  med_id        VARCHAR(32) NOT NULL,              -- e.g., MED-0001
+  name          VARCHAR(255) NOT NULL,
+  generic_name  VARCHAR(255) NOT NULL,
+  category      VARCHAR(255) NOT NULL,
+  form          VARCHAR(255) NOT NULL,
+  strength      VARCHAR(64)  NOT NULL,
+  reorder_level INT NOT NULL,
+  is_active     TINYINT(1) NOT NULL DEFAULT 1,
+  PRIMARY KEY (med_id),
+  CONSTRAINT chk_medications_reorder_level CHECK (reorder_level >= 0)
+) ENGINE=InnoDB;
+
+CREATE TABLE medication_lots (
+  lot_id      BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  med_id      VARCHAR(32) NOT NULL,
+  lot_number  VARCHAR(64) NOT NULL,
+  expiry_date DATE NOT NULL,
+  PRIMARY KEY (lot_id),
+  UNIQUE KEY uq_lots_med_lotnumber (med_id, lot_number),
+  KEY idx_lots_med (med_id),
+  CONSTRAINT fk_lots_med
+    FOREIGN KEY (med_id) REFERENCES medications(med_id)
+    ON UPDATE CASCADE ON DELETE RESTRICT
+) ENGINE=InnoDB;
+
+CREATE TABLE inventory_balances (
+  med_id      VARCHAR(32) NOT NULL,
+  location_id BIGINT UNSIGNED NOT NULL,
+  lot_id      BIGINT UNSIGNED NOT NULL,
+  quantity    INT NOT NULL,
+  PRIMARY KEY (med_id, location_id, lot_id),
+  KEY idx_bal_location (location_id),
+  KEY idx_bal_lot (lot_id),
+  CONSTRAINT chk_balances_qty CHECK (quantity >= 0),
+  CONSTRAINT fk_bal_med
+    FOREIGN KEY (med_id) REFERENCES medications(med_id)
+    ON UPDATE CASCADE ON DELETE RESTRICT,
+  CONSTRAINT fk_bal_location
+    FOREIGN KEY (location_id) REFERENCES locations(location_id)
+    ON UPDATE CASCADE ON DELETE RESTRICT,
+  CONSTRAINT fk_bal_lot
+    FOREIGN KEY (lot_id) REFERENCES medication_lots(lot_id)
+    ON UPDATE CASCADE ON DELETE RESTRICT
+) ENGINE=InnoDB;
+
+CREATE TABLE stock_movements (
+  movement_id      BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  occurred_at      DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+  med_id           VARCHAR(32) NOT NULL,
+  from_location_id BIGINT UNSIGNED NULL,
+  to_location_id   BIGINT UNSIGNED NULL,
+  lot_id           BIGINT UNSIGNED NOT NULL,
+  delta_qty        INT NOT NULL,                   -- +receive / -dispense
+  reason           VARCHAR(32) NOT NULL,           -- receive/dispense/transfer/adjustment
+  reference        VARCHAR(128) NULL,
+  actor            VARCHAR(128) NULL,
+  PRIMARY KEY (movement_id),
+  KEY idx_mov_med_time (med_id, occurred_at),
+  KEY idx_mov_lot (lot_id),
+  KEY idx_mov_from (from_location_id),
+  KEY idx_mov_to (to_location_id),
+  CONSTRAINT fk_mov_med
+    FOREIGN KEY (med_id) REFERENCES medications(med_id)
+    ON UPDATE CASCADE ON DELETE RESTRICT,
+  CONSTRAINT fk_mov_lot
+    FOREIGN KEY (lot_id) REFERENCES medication_lots(lot_id)
+    ON UPDATE CASCADE ON DELETE RESTRICT,
+  CONSTRAINT fk_mov_from
+    FOREIGN KEY (from_location_id) REFERENCES locations(location_id)
+    ON UPDATE CASCADE ON DELETE RESTRICT,
+  CONSTRAINT fk_mov_to
+    FOREIGN KEY (to_location_id) REFERENCES locations(location_id)
+    ON UPDATE CASCADE ON DELETE RESTRICT
+) ENGINE=InnoDB;

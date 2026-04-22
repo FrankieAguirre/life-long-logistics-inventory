@@ -1,0 +1,247 @@
+INSERT INTO Medications (med_id, name, category, form, strength, unit)
+VALUES
+-- Pain Relief
+('MED-0001', 'Acetaminophen', 'Pain Relief', 'Tablet', '500', 'mg'),
+('MED-0002', 'Ibuprofen', 'Pain Relief', 'Tablet', '200', 'mg'),
+('MED-0003', 'Naproxen', 'Pain Relief', 'Tablet', '220', 'mg'),
+('MED-0004', 'Aspirin', 'Pain Relief', 'Tablet', '325', 'mg'),
+('MED-0005', 'Ketorolac', 'Pain Relief', 'Injection', '30', 'mg/mL'),
+('MED-0006', 'Tramadol', 'Pain Relief', 'Tablet', '50', 'mg'),
+('MED-0007', 'Morphine Sulfate', 'Pain Relief', 'Injection', '10', 'mg/mL'),
+('MED-0008', 'Hydrocodone-Acetaminophen', 'Pain Relief', 'Tablet', '5-325', 'mg'),
+('MED-0009', 'Oxycodone', 'Pain Relief', 'Tablet', '5', 'mg'),
+('MED-0010', 'Celecoxib', 'Pain Relief', 'Capsule', '200', 'mg'),
+
+-- Antibiotics
+('MED-0011', 'Amoxicillin', 'Antibiotic', 'Capsule', '500', 'mg'),
+('MED-0012', 'Azithromycin', 'Antibiotic', 'Tablet', '250', 'mg'),
+('MED-0013', 'Ciprofloxacin', 'Antibiotic', 'Tablet', '500', 'mg'),
+('MED-0014', 'Doxycycline', 'Antibiotic', 'Capsule', '100', 'mg'),
+('MED-0015', 'Cephalexin', 'Antibiotic', 'Capsule', '500', 'mg'),
+('MED-0016', 'Clindamycin', 'Antibiotic', 'Capsule', '300', 'mg'),
+('MED-0017', 'Levofloxacin', 'Antibiotic', 'Tablet', '500', 'mg'),
+('MED-0018', 'Metronidazole', 'Antibiotic', 'Tablet', '500', 'mg'),
+('MED-0019', 'Vancomycin', 'Antibiotic', 'Injection', '1', 'g'),
+('MED-0020', 'Piperacillin-Tazobactam', 'Antibiotic', 'Injection', '3.375', 'g'),
+
+-- Antihistamines
+('MED-0021', 'Cetirizine', 'Antihistamine', 'Tablet', '10', 'mg'),
+('MED-0022', 'Loratadine', 'Antihistamine', 'Tablet', '10', 'mg'),
+('MED-0023', 'Diphenhydramine', 'Antihistamine', 'Capsule', '25', 'mg'),
+('MED-0024', 'Fexofenadine', 'Antihistamine', 'Tablet', '180', 'mg'),
+('MED-0025', 'Hydroxyzine', 'Antihistamine', 'Tablet', '25', 'mg'),
+('MED-0026', 'Chlorpheniramine', 'Antihistamine', 'Tablet', '4', 'mg'),
+('MED-0027', 'Promethazine', 'Antihistamine', 'Tablet', '25', 'mg'),
+('MED-0028', 'Olopatadine', 'Antihistamine', 'Eye Drops', '0.1', '%'),
+('MED-0029', 'Azelastine', 'Antihistamine', 'Nasal Spray', '137', 'mcg'),
+('MED-0030', 'Levocetirizine', 'Antihistamine', 'Tablet', '5', 'mg'),
+
+-- Diabetes
+('MED-0031', 'Metformin', 'Diabetes', 'Tablet', '500', 'mg'),
+('MED-0032', 'Glipizide', 'Diabetes', 'Tablet', '5', 'mg'),
+('MED-0033', 'Insulin Glargine', 'Diabetes', 'Injection', '100', 'units/mL'),
+('MED-0034', 'Insulin Lispro', 'Diabetes', 'Injection', '100', 'units/mL'),
+('MED-0035', 'Sitagliptin', 'Diabetes', 'Tablet', '100', 'mg'),
+('MED-0036', 'Pioglitazone', 'Diabetes', 'Tablet', '30', 'mg'),
+('MED-0037', 'Glyburide', 'Diabetes', 'Tablet', '5', 'mg'),
+('MED-0038', 'Dulaglutide', 'Diabetes', 'Injection', '1.5', 'mg'),
+('MED-0039', 'Semaglutide', 'Diabetes', 'Injection', '2', 'mg'),
+('MED-0040', 'Empagliflozin', 'Diabetes', 'Tablet', '10', 'mg'),
+
+-- Cardiovascular
+('MED-0041', 'Lisinopril', 'Cardiovascular', 'Tablet', '10', 'mg'),
+('MED-0042', 'Amlodipine', 'Cardiovascular', 'Tablet', '5', 'mg'),
+('MED-0043', 'Metoprolol Tartrate', 'Cardiovascular', 'Tablet', '50', 'mg'),
+('MED-0044', 'Atorvastatin', 'Cardiovascular', 'Tablet', '20', 'mg'),
+('MED-0045', 'Hydrochlorothiazide', 'Cardiovascular', 'Tablet', '25', 'mg'),
+('MED-0046', 'Losartan', 'Cardiovascular', 'Tablet', '50', 'mg'),
+('MED-0047', 'Carvedilol', 'Cardiovascular', 'Tablet', '12.5', 'mg'),
+('MED-0048', 'Clopidogrel', 'Cardiovascular', 'Tablet', '75', 'mg'),
+('MED-0049', 'Warfarin', 'Cardiovascular', 'Tablet', '5', 'mg'),
+('MED-0050', 'Nitroglycerin', 'Cardiovascular', 'Sublingual', '0.4', 'mg'),
+
+-- Gastrointestinal
+('MED-0051', 'Omeprazole', 'Gastrointestinal', 'Capsule', '20', 'mg'),
+('MED-0052', 'Pantoprazole', 'Gastrointestinal', 'Tablet', '40', 'mg'),
+('MED-0053', 'Famotidine', 'Gastrointestinal', 'Tablet', '20', 'mg'),
+('MED-0054', 'Loperamide', 'Gastrointestinal', 'Capsule', '2', 'mg'),
+('MED-0055', 'Ondansetron', 'Gastrointestinal', 'Tablet', '4', 'mg'),
+('MED-0056', 'Sucralfate', 'Gastrointestinal', 'Tablet', '1', 'g'),
+('MED-0057', 'Mesalamine', 'Gastrointestinal', 'Capsule', '400', 'mg'),
+('MED-0058', 'Dicyclomine', 'Gastrointestinal', 'Capsule', '10', 'mg'),
+('MED-0059', 'Metoclopramide', 'Gastrointestinal', 'Tablet', '10', 'mg'),
+('MED-0060', 'Bisacodyl', 'Gastrointestinal', 'Tablet', '5', 'mg'),
+
+-- Mental Health
+('MED-0061', 'Sertraline', 'Mental Health', 'Tablet', '50', 'mg'),
+('MED-0062', 'Fluoxetine', 'Mental Health', 'Capsule', '20', 'mg'),
+('MED-0063', 'Escitalopram', 'Mental Health', 'Tablet', '10', 'mg'),
+('MED-0064', 'Bupropion XL', 'Mental Health', 'Tablet', '150', 'mg'),
+('MED-0065', 'Quetiapine', 'Mental Health', 'Tablet', '25', 'mg'),
+('MED-0066', 'Aripiprazole', 'Mental Health', 'Tablet', '10', 'mg'),
+('MED-0067', 'Venlafaxine XR', 'Mental Health', 'Capsule', '75', 'mg'),
+('MED-0068', 'Duloxetine', 'Mental Health', 'Capsule', '60', 'mg'),
+('MED-0069', 'Lamotrigine', 'Mental Health', 'Tablet', '100', 'mg'),
+('MED-0070', 'Lithium Carbonate', 'Mental Health', 'Tablet', '300', 'mg'),
+
+-- Respiratory
+('MED-0071', 'Albuterol', 'Respiratory', 'Inhaler', '90', 'mcg'),
+('MED-0072', 'Fluticasone', 'Respiratory', 'Inhaler', '110', 'mcg'),
+('MED-0073', 'Montelukast', 'Respiratory', 'Tablet', '10', 'mg'),
+('MED-0074', 'Prednisone', 'Respiratory', 'Tablet', '20', 'mg'),
+('MED-0075', 'Ipratropium', 'Respiratory', 'Nebulizer', '0.5', 'mg'),
+('MED-0076', 'Budesonide', 'Respiratory', 'Nebulizer', '0.25', 'mg'),
+('MED-0077', 'Tiotropium', 'Respiratory', 'Inhaler', '18', 'mcg'),
+('MED-0078', 'Formoterol', 'Respiratory', 'Inhaler', '12', 'mcg'),
+('MED-0079', 'Salmeterol', 'Respiratory', 'Inhaler', '50', 'mcg'),
+('MED-0080', 'Theophylline', 'Respiratory', 'Tablet', '300', 'mg'),
+
+-- Endocrine
+('MED-0081', 'Levothyroxine', 'Endocrine', 'Tablet', '50', 'mcg'),
+('MED-0082', 'Liothyronine', 'Endocrine', 'Tablet', '25', 'mcg'),
+('MED-0083', 'Hydrocortisone', 'Endocrine', 'Tablet', '10', 'mg'),
+('MED-0084', 'Prednisolone', 'Endocrine', 'Tablet', '15', 'mg'),
+('MED-0085', 'Desmopressin', 'Endocrine', 'Tablet', '0.2', 'mg'),
+('MED-0086', 'Fludrocortisone', 'Endocrine', 'Tablet', '0.1', 'mg'),
+('MED-0087', 'Cabergoline', 'Endocrine', 'Tablet', '0.5', 'mg'),
+('MED-0088', 'Methimazole', 'Endocrine', 'Tablet', '10', 'mg'),
+('MED-0089', 'Propylthiouracil', 'Endocrine', 'Tablet', '50', 'mg'),
+('MED-0090', 'Somatropin', 'Endocrine', 'Injection', '5', 'mg'),
+
+-- Infectious Disease / Antivirals
+('MED-0091', 'Oseltamivir', 'Antiviral', 'Capsule', '75', 'mg'),
+('MED-0092', 'Acyclovir', 'Antiviral', 'Tablet', '400', 'mg'),
+('MED-0093', 'Valacyclovir', 'Antiviral', 'Tablet', '500', 'mg'),
+('MED-0094', 'Remdesivir', 'Antiviral', 'Injection', '100', 'mg'),
+('MED-0095', 'Ribavirin', 'Antiviral', 'Capsule', '200', 'mg'),
+('MED-0096', 'Lamivudine', 'Antiviral', 'Tablet', '150', 'mg'),
+('MED-0097', 'Tenofovir', 'Antiviral', 'Tablet', '300', 'mg'),
+('MED-0098', 'Dolutegravir', 'Antiviral', 'Tablet', '50', 'mg'),
+('MED-0099', 'Efavirenz', 'Antiviral', 'Tablet', '600', 'mg'),
+('MED-0100', 'Maraviroc', 'Antiviral', 'Tablet', '150', 'mg'),
+
+-- Vaccines
+('MED-0101', 'Influenza Vaccine', 'Vaccine', 'Injection', '0.5', 'mL'),
+('MED-0102', 'Hepatitis B Vaccine', 'Vaccine', 'Injection', '1', 'mL'),
+('MED-0103', 'Tdap Vaccine', 'Vaccine', 'Injection', '0.5', 'mL'),
+('MED-0104', 'MMR Vaccine', 'Vaccine', 'Injection', '0.5', 'mL'),
+('MED-0105', 'Varicella Vaccine', 'Vaccine', 'Injection', '0.5', 'mL'),
+('MED-0106', 'HPV Vaccine', 'Vaccine', 'Injection', '0.5', 'mL'),
+('MED-0107', 'Pneumococcal Vaccine', 'Vaccine', 'Injection', '0.5', 'mL'),
+('MED-0108', 'Meningococcal Vaccine', 'Vaccine', 'Injection', '0.5', 'mL'),
+('MED-0109', 'COVID-19 mRNA Vaccine', 'Vaccine', 'Injection', '0.3', 'mL'),
+('MED-0110', 'Rotavirus Vaccine', 'Vaccine', 'Oral', '2', 'mL'),
+
+-- Dermatology
+('MED-0111', 'Hydrocortisone Cream', 'Dermatology', 'Topical', '1', '%'),
+('MED-0112', 'Triamcinolone Cream', 'Dermatology', 'Topical', '0.1', '%'),
+('MED-0113', 'Clotrimazole Cream', 'Dermatology', 'Topical', '1', '%'),
+('MED-0114', 'Mupirocin Ointment', 'Dermatology', 'Topical', '2', '%'),
+('MED-0115', 'Tretinoin Cream', 'Dermatology', 'Topical', '0.05', '%'),
+('MED-0116', 'Ketoconazole Shampoo', 'Dermatology', 'Topical', '2', '%'),
+('MED-0117', 'Benzoyl Peroxide', 'Dermatology', 'Topical', '5', '%'),
+('MED-0118', 'Adapalene Gel', 'Dermatology', 'Topical', '0.1', '%'),
+('MED-0119', 'Calcipotriene Cream', 'Dermatology', 'Topical', '0.005', '%'),
+('MED-0120', 'Tacrolimus Ointment', 'Dermatology', 'Topical', '0.1', '%'),
+
+-- Ophthalmology
+('MED-0121', 'Timolol Eye Drops', 'Ophthalmology', 'Eye Drops', '0.5', '%'),
+('MED-0122', 'Latanoprost', 'Ophthalmology', 'Eye Drops', '0.005', '%'),
+('MED-0123', 'Brimonidine', 'Ophthalmology', 'Eye Drops', '0.2', '%'),
+('MED-0124', 'Tobramycin Eye Drops', 'Ophthalmology', 'Eye Drops', '0.3', '%'),
+('MED-0125', 'Erythromycin Eye Ointment', 'Ophthalmology', 'Ointment', '0.5', '%'),
+('MED-0126', 'Cyclosporine Eye Drops', 'Ophthalmology', 'Eye Drops', '0.05', '%'),
+('MED-0127', 'Ofloxacin Eye Drops', 'Ophthalmology', 'Eye Drops', '0.3', '%'),
+('MED-0128', 'Prednisolone Acetate', 'Ophthalmology', 'Eye Drops', '1', '%'),
+('MED-0129', 'Fluorometholone', 'Ophthalmology', 'Eye Drops', '0.1', '%'),
+('MED-0130', 'Olopatadine Eye Drops', 'Ophthalmology', 'Eye Drops', '0.2', '%'),
+
+-- Neurology
+('MED-0131', 'Gabapentin', 'Neurology', 'Capsule', '300', 'mg'),
+('MED-0132', 'Pregabalin', 'Neurology', 'Capsule', '75', 'mg'),
+('MED-0133', 'Topiramate', 'Neurology', 'Tablet', '50', 'mg'),
+('MED-0134', 'Valproic Acid', 'Neurology', 'Capsule', '250', 'mg'),
+('MED-0135', 'Carbamazepine', 'Neurology', 'Tablet', '200', 'mg'),
+('MED-0136', 'Phenytoin', 'Neurology', 'Capsule', '100', 'mg'),
+('MED-0137', 'Levetiracetam', 'Neurology', 'Tablet', '500', 'mg'),
+('MED-0138', 'Ropinirole', 'Neurology', 'Tablet', '1', 'mg'),
+('MED-0139', 'Pramipexole', 'Neurology', 'Tablet', '0.5', 'mg'),
+('MED-0140', 'Sumatriptan', 'Neurology', 'Tablet', '50', 'mg'),
+
+-- Oncology
+('MED-0141', 'Methotrexate', 'Oncology', 'Injection', '25', 'mg/mL'),
+('MED-0142', 'Paclitaxel', 'Oncology', 'Injection', '6', 'mg/mL'),
+('MED-0143', 'Doxorubicin', 'Oncology', 'Injection', '2', 'mg/mL'),
+('MED-0144', 'Cyclophosphamide', 'Oncology', 'Injection', '500', 'mg'),
+('MED-0145', 'Cisplatin', 'Oncology', 'Injection', '1', 'mg/mL'),
+('MED-0146', 'Etoposide', 'Oncology', 'Injection', '20', 'mg/mL'),
+('MED-0147', 'Letrozole', 'Oncology', 'Tablet', '2.5', 'mg'),
+('MED-0148', 'Anastrozole', 'Oncology', 'Tablet', '1', 'mg'),
+('MED-0149', 'Tamoxifen', 'Oncology', 'Tablet', '20', 'mg'),
+('MED-0150', 'Imatinib', 'Oncology', 'Tablet', '400', 'mg'),
+
+-- Rheumatology
+('MED-0151', 'Methotrexate Tablet', 'Rheumatology', 'Tablet', '2.5', 'mg'),
+('MED-0152', 'Adalimumab', 'Rheumatology', 'Injection', '40', 'mg'),
+('MED-0153', 'Etanercept', 'Rheumatology', 'Injection', '50', 'mg'),
+('MED-0154', 'Sulfasalazine', 'Rheumatology', 'Tablet', '500', 'mg'),
+('MED-0155', 'Hydroxychloroquine', 'Rheumatology', 'Tablet', '200', 'mg'),
+('MED-0156', 'Tofacitinib', 'Rheumatology', 'Tablet', '5', 'mg'),
+('MED-0157', 'Leflunomide', 'Rheumatology', 'Tablet', '20', 'mg'),
+
+-- Urology
+('MED-0158', 'Tamsulosin', 'Urology', 'Capsule', '0.4', 'mg'),
+('MED-0159', 'Finasteride', 'Urology', 'Tablet', '5', 'mg'),
+('MED-0160', 'Oxybutynin', 'Urology', 'Tablet', '5', 'mg'),
+('MED-0161', 'Tolterodine', 'Urology', 'Tablet', '2', 'mg'),
+('MED-0162', 'Mirabegron', 'Urology', 'Tablet', '25', 'mg'),
+('MED-0163', 'Sildenafil', 'Urology', 'Tablet', '50', 'mg'),
+('MED-0164', 'Tadalafil', 'Urology', 'Tablet', '10', 'mg'),
+
+-- Women’s Health
+('MED-0165', 'Medroxyprogesterone', 'Women\'s Health', 'Tablet', '10', 'mg'),
+('MED-0166', 'Norethindrone', 'Women\'s Health', 'Tablet', '0.35', 'mg'),
+('MED-0167', 'Estradiol', 'Women\'s Health', 'Tablet', '1', 'mg'),
+('MED-0168', 'Conjugated Estrogens', 'Women\'s Health', 'Tablet', '0.625', 'mg'),
+('MED-0169', 'Misoprostol', 'Women\'s Health', 'Tablet', '200', 'mcg'),
+('MED-0170', 'Oxytocin', 'Women\'s Health', 'Injection', '10', 'units/mL'),
+('MED-0171', 'Clomiphene', 'Women\'s Health', 'Tablet', '50', 'mg'),
+
+-- Infectious Disease (Additional)
+('MED-0172', 'Isoniazid', 'Antibiotic', 'Tablet', '300', 'mg'),
+('MED-0173', 'Rifampin', 'Antibiotic', 'Capsule', '300', 'mg'),
+('MED-0174', 'Ethambutol', 'Antibiotic', 'Tablet', '400', 'mg'),
+('MED-0175', 'Pyrazinamide', 'Antibiotic', 'Tablet', '500', 'mg'),
+('MED-0176', 'Linezolid', 'Antibiotic', 'Tablet', '600', 'mg'),
+('MED-0177', 'Tigecycline', 'Antibiotic', 'Injection', '50', 'mg'),
+('MED-0178', 'Ceftaroline', 'Antibiotic', 'Injection', '600', 'mg'),
+
+-- Pain / Neurology (Additional)
+('MED-0179', 'Nalbuphine', 'Pain Relief', 'Injection', '10', 'mg/mL'),
+('MED-0180', 'Buprenorphine', 'Pain Relief', 'Sublingual', '2', 'mg'),
+('MED-0181', 'Fentanyl Patch', 'Pain Relief', 'Patch', '25', 'mcg/hr'),
+('MED-0182', 'Zolmitriptan', 'Neurology', 'Tablet', '2.5', 'mg'),
+('MED-0183', 'Rizatriptan', 'Neurology', 'Tablet', '10', 'mg'),
+('MED-0184', 'Memantine', 'Neurology', 'Tablet', '10', 'mg'),
+('MED-0185', 'Donepezil', 'Neurology', 'Tablet', '10', 'mg'),
+
+-- GI (Additional)
+('MED-0186', 'Rifaximin', 'Gastrointestinal', 'Tablet', '550', 'mg'),
+('MED-0187', 'Eluxadoline', 'Gastrointestinal', 'Tablet', '75', 'mg'),
+('MED-0188', 'Lubiprostone', 'Gastrointestinal', 'Capsule', '24', 'mcg'),
+('MED-0189', 'Linaclotide', 'Gastrointestinal', 'Capsule', '145', 'mcg'),
+('MED-0190', 'Ursodiol', 'Gastrointestinal', 'Capsule', '300', 'mg'),
+
+-- Dermatology (Additional)
+('MED-0191', 'Isotretinoin', 'Dermatology', 'Capsule', '40', 'mg'),
+('MED-0192', 'Clindamycin Gel', 'Dermatology', 'Topical', '1', '%'),
+('MED-0193', 'Metronidazole Gel', 'Dermatology', 'Topical', '0.75', '%'),
+('MED-0194', 'Azelaic Acid', 'Dermatology', 'Topical', '15', '%'),
+('MED-0195', 'Salicylic Acid', 'Dermatology', 'Topical', '2', '%'),
+
+-- Miscellaneous / General
+('MED-0196', 'Folic Acid', 'Supplement', 'Tablet', '1', 'mg'),
+('MED-0197', 'Vitamin B12', 'Supplement', 'Injection', '1000', 'mcg'),
+('MED-0198', 'Vitamin D3', 'Supplement', 'Tablet', '2000', 'IU'),
+('MED-0199', 'Potassium Chloride', 'Electrolyte', 'Tablet', '20', 'mEq'),
+('MED-0200', 'Magnesium Oxide', 'Electrolyte', 'Tablet', '400', 'mg');

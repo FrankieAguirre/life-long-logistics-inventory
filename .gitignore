@@ -42,3 +42,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local dedicated MySQL datadir (created by setup scripts / manual mysqld)
+mysql-data-lll/
+.mysql-lll-data/

@@ -5,15 +5,25 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:api": "node backend/server.js",
+    "dev:full": "concurrently -k -n client,api -c blue,green \"vite\" \"node backend/server.js\"",
+    "mysql:start": "bash scripts/start-mysql.sh",
+    "mysql:stop": "bash scripts/stop-mysql.sh",
+    "setup:local": "npm run mysql:start && npm run db:seed",
+    "db:seed": "node server/seed.js",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^16.4.7",
+    "mysql2": "^3.12.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },
   "devDependencies": {
+    "concurrently": "^9.1.2",
     "@eslint/js": "^9.39.1",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",

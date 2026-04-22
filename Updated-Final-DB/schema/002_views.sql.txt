@@ -1,0 +1,29 @@
+CREATE OR REPLACE VIEW v_med_stock AS
+SELECT
+  m.med_id,
+  m.name,
+  m.generic_name,
+  m.category,
+  m.form,
+  m.strength,
+  m.reorder_level,
+  COALESCE(SUM(b.quantity), 0) AS stock_qty
+FROM medications m
+LEFT JOIN inventory_balances b ON b.med_id = m.med_id
+GROUP BY
+  m.med_id, m.name, m.generic_name, m.category, m.form, m.strength, m.reorder_level;
+
+CREATE OR REPLACE VIEW v_low_stock AS
+SELECT *
+FROM v_med_stock
+WHERE stock_qty <= reorder_level;
+
+CREATE OR REPLACE VIEW v_expiring_soon AS
+SELECT
+  l.med_id,
+  l.lot_number,
+  l.expiry_date,
+  DATEDIFF(l.expiry_date, CURDATE()) AS days_until_expiry
+FROM medication_lots l
+WHERE l.expiry_date > CURDATE()
+  AND l.expiry_date <= DATE_ADD(CURDATE(), INTERVAL 60 DAY);
